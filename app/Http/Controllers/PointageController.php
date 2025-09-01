@@ -57,7 +57,7 @@ class PointageController extends Controller
         $validTypes = ['ARRIVEE', 'DEPART', 'DEBUT_PAUSE', 'FIN_PAUSE'];
 
         if (!in_array($scanType, $validTypes)) {
-                return response()->json(['success' => false, 'message' => 'QR Code non valide.'], 400);
+            return response()->json(['success' => false, 'message' => 'QR Code non valide.'], 400);
         }
 
         /** @var \App\Models\User $user */
@@ -86,19 +86,19 @@ class PointageController extends Controller
                 }
                 $pointage->heure_depart = now();
                 break;
-
-                // La logique pour les pauses peut être ajoutée ici
+            
+            // La logique pour les pauses peut être ajoutée ici
             case 'DEBUT_PAUSE':
-                    // ...
+                // ...
                 break;
-
+            
             case 'FIN_PAUSE':
-                    // ...
+                // ...
                 break;
         }
 
         $pointage->save();
-
+        
         // Préparer la réponse JSON pour le client
         $responseData = [
             'success' => true,
@@ -115,4 +115,5 @@ class PointageController extends Controller
 
         return response()->json($responseData);
     }
+
 }
