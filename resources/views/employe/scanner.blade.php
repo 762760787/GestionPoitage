@@ -12,11 +12,11 @@
         <main class="flex-grow flex flex-col items-center justify-center">
             <!-- Conteneur pour le scanner -->
             <div id="qr-reader" class="w-full max-w-sm mx-auto rounded-lg overflow-hidden border-2 border-gray-300 shadow-lg"></div>
-
+            
             <!-- Zone de message pour les résultats -->
             <div id="qr-result" class="mt-4 text-center w-full max-w-sm mx-auto"></div>
         </main>
-
+        
         <footer class="text-center mt-6">
              <a href="{{ route('employe.dashboard') }}" class="text-sm text-primary hover:underline">&larr; Retour au tableau de bord</a>
         </footer>
